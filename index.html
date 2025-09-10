@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kartensortiment - Ihr zuverlässiger Händler für Sammelkarten</title>
+    <meta name="keywords" content="Pokemon Karten, Sammelkarten, Lorcana, One Piece, Cardmarket, eBay, Berlin, Trading Cards, TCG">
+    <meta name="description" content="kartensortiment - Ihr zuverlässiger Händler für Sammelkarten wie Pokemon, Lorcana und One Piece. Große Auswahl zu fairen Preisen mit schnellem Versand aus Berlin.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #dc2626;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            height: 40px;
+            width: 40px;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #dc2626;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: #991b1b;
+            box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px rgba(153, 27, 27, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #dc2626;
+        }
+
+        .about {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            background: #dc2626;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .contact-info h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: #fbbf24;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="media/logo_kartensortiment.svg" alt="kartensortiment Logo" style="height: 40px; width: auto; max-width: 60px; object-fit: contain;">
+                kartensortiment
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Start</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#features">Warum wir</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Willkommen bei kartensortiment</h1>
+            <p>Dein zuverlässiger Händler für Sammelkarten wie Pokemon, Lorcana und One Piece</p>
+            <div class="cta-buttons">
+                <a href="https://www.ebay.de/usr/kartensortiment" target="_blank" class="btn">eBay Shop besuchen</a>
+                <a href="https://www.cardmarket.com/de/Pokemon/Users/kartensortiment" target="_blank" class="btn btn-secondary">Cardmarket Shop besuchen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Features Section -->
+            <section id="features" class="section">
+                <h2>Warum kartensortiment?</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3>Familiär geführtes Unternehmen</h3>
+                        <p>Aus Berlin mit Leidenschaft für Sammelkarten. Wir sind selbst begeisterte Sammler und Händler.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="media/logo_kartensortiment.svg" alt="kartensortiment Logo" style="height: 48px; width: auto; max-width: 60px; object-fit: contain;">
+                        </div>
+                        <h3>Große Auswahl</h3>
+                        <p>Einzelkarten, Kartenpakete (Bulks), ungeöffnete Packungen und vieles mehr zu fairen Preisen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Schneller Versand</h3>
+                        <p>Faire Versandkosten und schnelle Lieferung direkt aus Berlin zu dir nach Hause.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Transparente Preise</h3>
+                        <p>Wir weisen auf unseren Rechnungen die Mehrwertsteuer aus - keine versteckten Kosten.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Spezialisiert</h3>
+                        <p>Fokus auf Pokemon, Lorcana, One Piece und andere beliebte Sammelkartenspiele.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>Persönlicher Service</h3>
+                        <p>Wir stehen euch jederzeit für Fragen zur Verfügung - persönlich und kompetent.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about">
+                <div class="container">
+                    <h2>Über uns</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3>Dein zuverlässiger Partner für Sammelkarten</h3>
+                            <p>Bei kartensortiment findest du eine große Auswahl an Karten zu fairen Preisen. Egal, ob du deine Sammlung erweitern, dein Deck verbessern oder einfach spannende Karten entdecken möchtest – bei uns findest du die passenden Angebote.</p>
+                            <p>Wir sind selbst begeisterte Sammler und Händler und verstehen, was Sammler wirklich brauchen. Deshalb bieten wir nicht nur qualitativ hochwertige Karten, sondern auch einen erstklassigen Service.</p>
+                            <p>Besuche uns auf eBay oder Cardmarket und entdecke unsere aktuellen Angebote!</p>
+                        </div>
+                        <div class="contact-info">
+                            <h4>Kontakt & Impressum</h4>
+                            <p><strong>Unternehmensname:</strong> Deep Tech Ventures UG (haftungsbeschränkt)</p>
+                            <p><strong>Inhaber:</strong> Sören Ladig</p>
+                            <p><strong>Adresse:</strong> Zipser Weg 20, 12623 Berlin, Germany</p>
+                            <p><strong>Telefon:</strong> <a href="tel:+4915121245719">+49 15121245719</a></p>
+                            <p><strong>E-Mail:</strong> <a href="mailto:info@kartensortiment.de">info@kartensortiment.de</a></p>
+                            <p><strong>USt-IdNr.:</strong> DE 358332828</p>
+                            <p><strong>BRN:</strong> HRB 220852 B</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p>&copy; 2025 kartensortiment - Deep Tech Ventures UG (haftungsbeschränkt)</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.ebay.de/usr/kartensortiment" target="_blank" title="eBay Shop">eBay</a>
+                    <a href="https://www.cardmarket.com/de/Pokemon/Users/kartensortiment" target="_blank" title="Cardmarket Shop">Cardmarket</a>
+                    <a href="https://www.instagram.com/kartensortiment.de/" target="_blank" title="Instagram">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
