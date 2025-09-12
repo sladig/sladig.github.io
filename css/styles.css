@@ -176,6 +176,71 @@ nav {
     color: #dc2626;
 }
 
+/* Cardmarket Professional Seller Section */
+.cardmarket-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.cardmarket-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.cardmarket-badge {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cardmarket-badge img {
+    margin-bottom: 1rem;
+}
+
+.certificate-link {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.certificate-link:hover {
+    text-decoration: underline;
+}
+
+.cardmarket-text h3 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.cardmarket-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.cardmarket-text ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.cardmarket-text li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.platform-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
 .about {
     background: #f8f9fa;
     padding: 60px 0;
@@ -268,6 +333,15 @@ footer {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .cardmarket-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .platform-links {
+        justify-content: center;
     }
 
     .about-content {
